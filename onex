@@ -634,7 +634,7 @@ all_tools() {
     clear
     # get all tools data
     echo " ${red} ___
-//___// ${yellow}All Tools
+//___// ${purple}Data Collection Started!
 "
     for data in `grep "." $tools_data | sort -f | grep -n '.' | sed -n 's/:/|/p' | cut -d"|" -f1,2 | tr ' ' '@'`; do
       # display tools name from data
@@ -809,14 +809,12 @@ update() {
 about() {
   clear
   echo "$logo"
-  echo " ${yellow}Onex ${red} v0.1${nc}"
-  echo " Onex is a library of"
-  echo " hacking tools for termux"
-  echo " and other linux distribution.\n"
+  echo " ${purple}NetHack ${red} v0.1${nc}"
+  echo " NetHack is a data grabbing tool"
+  echo " mostly used for grabbing data at bluetooth range"
+  echo " from phones and CCTV cameras\n"
   echo " ${red}Warning:${nc}"
-  echo " We are not responsible for any misuse"
-  echo " or damage caused by this program."
-  echo " Use this tool at your own risk!"
+  echo " Have Fun :)"
   echo -n "$prompt "
   read tmp
 }
@@ -828,18 +826,16 @@ menu() {
     tools=`grep -n '.' $tools_data | wc -l`
     echo "$logo"
     echo " ${cyan}[1] ${green} All tools ${nc}(${red}$tools tools${nc})"
-    echo " ${cyan}[2] ${green} Tools category"
-    echo " ${cyan}[3] ${green} Update onex"
-    echo " ${cyan}[4] ${green} About us"
+    echo " ${cyan}[2] ${green} About us"
     echo " ${cyan}[5] ${green} Exit"
     echo -n "$prompt "
     read cmd
     case ${cmd} in
       1)
-        all_tools
+        nethack
       ;;
       2)
-        category
+        about
       ;;
       3)
         update
