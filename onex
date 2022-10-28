@@ -1,7 +1,4 @@
 #!/bin/sh
-# Name : Onex
-# Date : 1 November 2021
-# Description : Onex is a hacking tools installer and package manager for hacker's.
 
 nc="\033[00m"
 red="\033[01;31m"
@@ -11,13 +8,16 @@ blue="\033[01;34m"
 purple="\033[01;35m"
 cyan="\033[01;36m"
 
-logo="${yellow}
-  ___  _ __   ___${red} __  __
-${yellow} / _ \\| '_ \\ / _ ${red} \\ \\/ /
-${yellow}| (_) | | | |  __/${red} >  < 
-${yellow} \___/|_| |_|\\___${red} /_/\_\\
+logo="${purple}
+
+${cyan}███╗   ██╗███████╗████████╗${purple}██╗  ██╗ █████╗  ██████╗██╗  ██╗
+${cyan}████╗  ██║██╔════╝╚══██╔══${purple}╝██║  ██║██╔══██╗██╔════╝██║ ██╔╝
+${cyan}██╔██╗ ██║█████╗     ██║   ${purple}███████║███████║██║     █████╔╝ 
+${cyan}██║╚██╗██║██╔══╝     ██║   ${purple}██╔══██║██╔══██║██║     ██╔═██╗ 
+${cyan}██║ ╚████║███████╗   ██║   ${purple}██║  ██║██║  ██║╚██████╗██║  ██╗
+${cyan}╚═╝  ╚═══╝╚══════╝   ╚═╝   ${purple}╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
 "
-prompt="${nc}[${blue}onex${nc}@${blue}space${nc}]$"
+prompt="${nc}[${blue}Welcome${nc}To${blue}N${nc}]$"
 
 # checking for system home dir
 if [ -d $HOME ]; then
@@ -660,7 +660,7 @@ all_tools() {
         break
       ;;
       *)
-        echo "${red}${cmd}: ${purple}invalid option!!"
+        echo "${cyan}${cmd}: ${purple}Data Collection Sleeping..."
         sleep 1
       ;;
     esac
@@ -807,7 +807,7 @@ update() {
 about() {
   clear
   echo "$logo"
-  echo " ${yellow}Onex ${red} v0.1${nc}"
+  echo " ${yellow}NetHack ${red} v0.2${nc}"
   echo " Have Fun :)"
   echo -n "$prompt "
   read tmp
@@ -840,7 +840,7 @@ menu() {
         about
       ;;
       5|exit|Exit)
-        echo "${green}Exiting ....${nc}"
+        echo "${green}Aborting...${nc}"
         break
       ;;
       *)
