@@ -12,10 +12,13 @@ purple="\033[01;35m"
 cyan="\033[01;36m"
 
 logo="${yellow}
-  ___  _ __   ___${red}__  __
-${yellow} / _ \\| '_ \\ / _ ${red}\\ \\/ /
-${yellow}| (_) | | | |  __/${red}>  < 
-${yellow} \___/|_| |_|\\___${red}/_/\_\\
+
+${cyan}███╗   ██╗███████╗████████╗${purple}██╗  ██╗ █████╗  ██████╗██╗  ██╗
+${cyan}████╗  ██║██╔════╝╚══██╔══${purple}╝██║  ██║██╔══██╗██╔════╝██║ ██╔╝
+${cyan}██╔██╗ ██║█████╗     ██║   ${purple}███████║███████║██║     █████╔╝ 
+${cyan}██║╚██╗██║██╔══╝     ██║   ${purple}██╔══██║██╔══██║██║     ██╔═██╗ 
+${cyan}██║ ╚████║███████╗   ██║   ${purple}██║  ██║██║  ██║╚██████╗██║  ██╗
+${cyan}╚═╝  ╚═══╝╚══════╝   ╚═╝   ${purple}╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
 "
 
 # checking for system home dir
@@ -164,7 +167,7 @@ if [ -e $bin/onex ]; then
   if [ -d $conf_dir/onex ]; then
     clear
     echo "$logo"
-    echo " ${purple}Onex ${green}installed successfully !!"
+    echo " ${purple}NetHack${green}installed successfully !!"
     echo " ${green}type ${nc}'onex -h'${green} for more.${nc}"
   else
     clear
