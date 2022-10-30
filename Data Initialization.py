@@ -18,7 +18,7 @@ print("| $$$$$$$/| $$  | $$   | $$  | $$  | $$| $$      | $$/   \  $$| $$ \  $$|
 time.sleep(1)
 print("|_______/ |__/  |__/   |__/  |__/  |__/|__/      |__/     \__/|__/  \__/|__/  |__/")
 time.sleep(2)
-Print("Data Initialization Started...")
+print("Data Initialization Started...")
 question = input('Execute?: ')
 if question == 'y' or 'Y':
       then
