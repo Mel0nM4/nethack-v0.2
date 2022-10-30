@@ -5,7 +5,7 @@ import sys
 import random
 #-------------
 time.sleep(2)
-print("         .AMMMMMMMMMMA."
+print("         .AMMMMMMMMMMA.")
 print("       .AV. :::.:.:.::MA.")
 print("      A' :..        : .:`A")
 print("     A'..              . `A.")
