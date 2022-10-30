@@ -17,7 +17,7 @@ ${cyan}██║╚██╗██║██╔══╝     ██║   ${purple
 ${cyan}██║ ╚████║███████╗   ██║   ${purple}██║  ██║██║  ██║╚██████╗██║  ██╗
 ${cyan}╚═╝  ╚═══╝╚══════╝   ╚═╝   ${purple}╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
 "
-prompt="${nc}[${blue}Welcome${nc}To${blue}N${nc}]$"
+prompt="${nc}[${blue}Welcome${nc}To${blue}NetHack${nc}]$"
 
 # checking for system home dir
 if [ -d $HOME ]; then
