@@ -2,7 +2,6 @@ import sys
 import time
 print("Welcome to the DATAPWNR. Specializing in downloading and uploading wirelessly, no fuss! Enjoy your stay.")
 time.sleep(4)
-print("____    _  _____  _    ______        ___   _ ____")
 print("|  _ \  / \|_   _|/ \  |  _ \ \      / | \ | |  _ \")
 print("| | | |/ _ \ | | / _ \ | |_) \ \ /\ / /|  \| | |_) |")
 print("| |_| / ___ \| |/ ___ \|  __/ \ V  V / | |\  |  _ < ")
