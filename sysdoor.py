@@ -82,7 +82,7 @@ print(random.randint(45, 65535))
 sleep.time(1)
 question = input('Upload Backdoor?: ')
 if question == 'y' or 'Y':
-print("Uploading Backdoor to Main Network...")
+  print("Uploading Backdoor to Main Network...")
 time.sleep(3)
 print("Uploading: |#--------------------")
 time.sleep(0.5)
