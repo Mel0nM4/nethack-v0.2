@@ -25,7 +25,6 @@ if question == 'y' or 'Y':
       time.sleep(2)
       print("Initialization Complete.")
       time.sleep(3)
-       
       print("Downloading Data...")
       print("Downloading: |#--------------------")
       time.sleep(2)
