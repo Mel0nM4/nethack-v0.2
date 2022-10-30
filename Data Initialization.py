@@ -18,7 +18,7 @@ print("|_______/ |__/  |__/   |__/  |__/  |__/|__/      |__/     \__/|__/  \__/|
 wait(2)
 Print("Data Initialization Started...")
 question = input('Execute?: ')
-      if question == 'y' or 'Y':
+if question == 'y' or 'Y':
       then
       wait(2)
       print("Initialization Complete.")
