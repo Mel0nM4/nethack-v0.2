@@ -14,7 +14,6 @@ time.sleep(2)
 print("Data Initialization Started...")
 question = input('Execute?: ')
 if question == 'y' or 'Y':
-      then
       time.sleep(2)
       print("Initialization Complete.")
       time.sleep(3)
