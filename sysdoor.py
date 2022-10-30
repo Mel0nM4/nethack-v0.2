@@ -33,7 +33,7 @@ print(" ▀▄▄▄▄▀     █   ▀▄▄▄▄▀    █  █  ▀██�
 print("          ▄▀              ███▀                █   ")
 sleep.time(3)
 print("Scanning Main Network for Open Port or Gateway...")
-      print("Scanning: |#--------------------")
+print("Scanning: |#--------------------")
       time.sleep(0.5)
       print("Scanning: |##-------------------")
       time.sleep(0.5)
