@@ -305,3 +305,80 @@ print("class Server:"
                 count += 1
 
         return count
+print("Finalizing...")
+print("Finalizing: |#--------------------")
+time.sleep(1)
+print("Finalizing: |##-------------------")
+time.sleep(1)
+print("Finalizing: |###------------------")
+time.sleep(1)
+print("Finalizing: |####-----------------")
+time.sleep(1)
+print("Finalizing: |#####----------------")
+time.sleep(1)
+print("Finalizing: |######-----------
+time.sleep(1)
+print("Finalizing: |#######--------------")
+time.sleep(1)
+print("Finalizing: |########-------------")
+time.sleep(1)
+print("Finalizing: |#########------------")
+time.sleep(1)
+print("Finalizing: |##########-----------")
+time.sleep(1)
+print("Finalizing: |###########----------")
+time.sleep(1)
+print("Finalizing: |############---------")
+time.sleep(1)
+print("Finalizing: |#############--------")
+time.sleep(1)
+print("Finalizing: |##############-------")
+time.sleep(1)
+print("Finalizing: |###############------")
+time.sleep(1)
+print("Finalizing: |################-----")
+time.sleep(1)
+print("Finalizing: |#################----")
+time.sleep(1)
+print("Finalizing: |##################---")
+time.sleep(1)
+print("Finalizing: |###################--")
+time.sleep(1)
+print("Finalizing: |####################-")
+time.sleep(1)
+print("Finalizing: |#####################")
+time.sleep(3)
+print("Finalizing Complete.")
+                        j                       k
+                        .K                       Z.
+                        jM.                     .Mk
+                        WMk                     jMW
+                        YMM.       ,,,,,,      .MMY
+                        `MML;:''```      ```':;JMM'
+                        /`JMMMk.           .jMMMk'\
+                        / `GMMMI'         `IMMMO' \
+                       /    ~~~'           `~~~    \
+                       /                           \
+                       |                           |
+                       |      ;,           ,;      |
+                       |      Tk           jT      |
+     "Skull"            |     `Mk   . .   jM'     |
+       Art by           |      YK.   Y   .ZY      |
+        Snafu            \     `Kk   |   jZ'     /
+                         \       `'  |  `'       /
+                          \          |          /
+                           \         |         /
+                           \         |         /
+                            \        |        /
+                             \       |       /
+                             \       |       /
+                              \      |      /
+                               \     |     /
+                               \  |  |  |  /
+                                \ {| | |} /
+                                 \ ` | ' /
+                                  \  |  /
+                                  \  |  /
+                                   \   /
+                                    \ /
+                                     ~
