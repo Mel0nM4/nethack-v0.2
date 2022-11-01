@@ -382,7 +382,7 @@ print("Finalizing: |####-----------------")
 time.sleep(1)
 print("Finalizing: |#####----------------")
 time.sleep(1)
-print("Finalizing: |######-----------
+print("Finalizing: |######---------------")
 time.sleep(1)
 print("Finalizing: |#######--------------")
 time.sleep(1)
