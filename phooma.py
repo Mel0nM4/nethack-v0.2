@@ -349,36 +349,37 @@ time.sleep(1)
 print("Finalizing: |#####################")
 time.sleep(3)
 print("Finalizing Complete.")
-                        j                       k
-                        .K                       Z.
-                        jM.                     .Mk
-                        WMk                     jMW
-                        YMM.       ,,,,,,      .MMY
-                        `MML;:''```      ```':;JMM'
-                        /`JMMMk.           .jMMMk'\
-                        / `GMMMI'         `IMMMO' \
-                       /    ~~~'           `~~~    \
-                       /                           \
-                       |                           |
-                       |      ;,           ,;      |
-                       |      Tk           jT      |
-     "Skull"            |     `Mk   . .   jM'     |
-       Art by           |      YK.   Y   .ZY      |
-        Snafu            \     `Kk   |   jZ'     /
-                         \       `'  |  `'       /
-                          \          |          /
-                           \         |         /
-                           \         |         /
-                            \        |        /
-                             \       |       /
-                             \       |       /
-                              \      |      /
-                               \     |     /
-                               \  |  |  |  /
-                                \ {| | |} /
-                                 \ ` | ' /
-                                  \  |  /
-                                  \  |  /
-                                   \   /
-                                    \ /
-                                     ~
+
+print("                   j                       k")
+print("                   .K                       Z.")
+print("                   jM.                     .Mk")
+print("                   WMk                     jMW")
+print("                   YMM.       ,,,,,,      .MMY")
+print("                   `MML;:''```      ```':;JMM'")
+print("                   /`JMMMk.           .jMMMk'\")
+print("                   / `GMMMI'         `IMMMO' \")
+print("                  /    ~~~'           `~~~    \")
+print("                  /                           \")
+print("                  |                           |")
+print("                  |      ;,           ,;      |")
+print("                  |      Tk           jT      |")
+print("                  |     `Mk   . .   jM'     |")
+print("                   |      YK.   Y   .ZY      |")
+print("                   \     `Kk   |   jZ'     /")
+print("                    \       `'  |  `'       /")
+print("                     \          |          /")
+print("                      \         |         /")
+print("                      \         |         /")
+print("                       \        |        /")
+print("                        \       |       /")
+print("                        \       |       /")
+print("                         \      |      /")
+print("                          \     |     /")
+print("                          \  |  |  |  /")
+print("                           \ {| | |} /")
+print("                            \ ` | ' /")
+print("                             \  |  /")
+print("                             \  |  /")
+print("                              \   /")
+print("                               \ /")
+print("                                ~")
