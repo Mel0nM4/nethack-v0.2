@@ -79,232 +79,232 @@ print(random.randint(45, 65535))
 time.sleep(1)
 question = input('Execute?: ')
 if question == 'y' or 'Y'
-print("class Server:"
-    def __init__(self, port):
-        self.logger = logging.getLogger(LOGGER_ID)
+print("class Server:")
+print("    def __init__(self, port):")
+print("        self.logger = logging.getLogger(LOGGER_ID)")
 
-        self.thread_accept = None
-        self.port = port
-        self.connections = []
-        self.addresses = []
+print("        self.thread_accept = None")
+print("        self.port = port")
+print("        self.connections = []")
+print("        self.addresses = []")
 
-        self.encryption = Encryption()
-        self.fernet = self.encryption.fernet
+ print("       self.encryption = Encryption()")
+ print("       self.fernet = self.encryption.fernet")
 
-        self.listener = socket.socket()
+ print("       self.listener = socket.socket()")
 
-        try:
-            self.listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,
-                                     1)  # reuse a socket even if its recently closed
-        except socket.error as e:
-            self.logger.error(f"Error creating socket {e}")
-            sys.exit(0)
+print("        try:")
+print("            self.listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,")
+print("                                     1)")
+print("        except socket.error as e:")
+print("            self.logger.error(Error creating socket {e}")
+print("            sys.exit(0)")
 
-    def listen_asych(self):
-        def bind():
-            try:
-                self.listener.bind(("0.0.0.0", self.port))
-                self.listener.listen(20)
-            except socket.error as e:
-                self.logger.warning(f"Error binding socket {e}\nRetrying...")
-                time.sleep(3)
-                bind()
+print("    def listen_asych(self):")
+print("        def bind():")
+print("            try:")
+print("                self.listener.bind(("0.0.0.0", self.port))")
+print("                self.listener.listen(20)")
+print("            except socket.error as e:")
+print("                self.logger.warning(f"Error binding socket {e}\nRetrying...")")
+print("                time.sleep(3)")
+print("                bind()")
 
-        bind()
+print("")        bind()
 
-        self.logger.info(f"Listening on port {self.port}")
+print("")        self.logger.info(f"Listening on port {self.port}")
 
-        def socket_accept():
-            while True:
-                try:
-                    _socket, address = self.listener.accept()
-                    _socket.setblocking(True)
+print("")        def socket_accept():
+print("")            while True:
+print("")                try:
+print("")                    _socket, address = self.listener.accept()
+print("")                    _socket.setblocking(True)
 
-                    es = EncryptedSocket(_socket, self.fernet)
+print("")                    es = EncryptedSocket(_socket, self.fernet)
 
                     # first command is always the unencrypted key (as b64)
                     # not the best solution, but sending it raw without wrapped JSON will remove emphasis
-                    es.send(base64.b64encode(self.encryption.key), False)
-                    self.logger.debug(f"send key: {self.encryption.key}")
+print("")                    es.send(base64.b64encode(self.encryption.key), False)
+print("")                    self.logger.debug(f"send key: {self.encryption.key}")
 
-                    while True:
+print("")                    while True:
                         # wait for handshake
-                        response = es.recv_json()
-                        if response["key"] == CLIENT_HANDSHAKE:
-                            break
+print("")                        response = es.recv_json()
+print("")                        if response["key"] == CLIENT_HANDSHAKE:
+print("")                            break
 
-                    address = {**{"ip": address[0], "port": address[1]}, **response["value"], **{"connected": True}}
+print("")                    address = {**{"ip": address[0], "port": address[1]}, **response["value"], **{"connected": True}}
 
-                    if es.socket in self.connections:
-                        self.addresses[self.connections.index(es.socket)]["connected"] = True
-                    else:
-                        self.connections.append(es.socket)
-                        self.addresses.append(address)
+print("")                    if es.socket in self.connections:
+print("")                        self.addresses[self.connections.index(es.socket)]["connected"] = True
+print("")                    else:
+print("")                        self.connections.append(es.socket)
+print("")                        self.addresses.append(address)
 
-                    self.logger.info(
-                        f"Connection {len(self.connections)} has been established: {address['ip']}:{address['port']} ({address['hostname']})")
-                except socket.error as err:
-                    self.logger.error(f"Error accepting connection {err}")
-                    continue
+print("")                    self.logger.info(
+print("")                        f"Connection {len(self.connections)} has been established: {address['ip']}:{address['port']} ({address['hostname']})")
+print("")                except socket.error as err:
+print("")                    self.logger.error(f"Error accepting connection {err}")
+print("")                    continue
 
-        self.thread_accept = Thread(target=socket_accept)
-        self.thread_accept.daemon = True
-        self.thread_accept.start()
+print("")        self.thread_accept = Thread(target=socket_accept)
+print("")        self.thread_accept.daemon = True
+print("")        self.thread_accept.start()
 
-    def close_clients(self):
-        if len(self.connections) > 0:
-            for _, _socket in enumerate(self.active_connections()):
-                es = EncryptedSocket(_socket, self.fernet)
+print("")    def close_clients(self):
+print("")        if len(self.connections) > 0:
+print("")            for _, _socket in enumerate(self.active_connections()):
+print("")                es = EncryptedSocket(_socket, self.fernet)
 
-                try:
-                    es.send_json(CLIENT_EXIT)
-                    es.socket.close()
-                except socket.error:
-                    pass
-        else:
-            self.logger.warning("No connections")
+print("")                try:
+print("")                    es.send_json(CLIENT_EXIT)
+print("")                    es.socket.close()
+print("")                except socket.error:
+print("")                    pass
+print("")        else:
+print("")            self.logger.warning("No connections")
 
-        del self.connections
-        del self.addresses
-        self.connections = []
-        self.addresses = []
+print("")        del self.connections
+print("")        del self.addresses
+print("")        self.connections = []
+print("")        self.addresses = []
 
     # either close with by index or a socket
-    def close_one(self, index=-1, sck=None):
-        if index == -1:
-            if sck is None:
-                self.logger.error("Invalid use of function")
-                return
+print("")    def close_one(self, index=-1, sck=None):
+print("")        if index == -1:
+print("")            if sck is None:
+print("")                self.logger.error("Invalid use of function")
+print("")                return
 
-            index = self.connections.index(sck) + 1
+print("")            index = self.connections.index(sck) + 1
 
-        try:
-            es = self.select(index)
-        except errors.ServerSocket.InvalidIndex as e:
-            self.logger.error(e)
-            return
+print("")        try:
+print("")            es = self.select(index)
+print("")        except errors.ServerSocket.InvalidIndex as e:
+print("")            self.logger.error(e)
+print("")            return
 
-        try:
-            es.send_json(CLIENT_EXIT)
-            es.socket.close()
-        except socket.error:
-            pass
+print("")        try:
+print("")            es.send_json(CLIENT_EXIT)
+print("")            es.socket.close()
+print("")        except socket.error:
+print("")            pass
 
-        self.addresses[self.connections.index(es.socket)]["connected"] = False
+print("")        self.addresses[self.connections.index(es.socket)]["connected"] = False
 
-    def refresh(self):
-        for _, _socket in enumerate(self.active_connections()):
-            close_conn = False
+print("")    def refresh(self):
+print("")        for _, _socket in enumerate(self.active_connections()):
+print("")            close_conn = False
 
-            es = EncryptedSocket(_socket, self.fernet)
+print("")            es = EncryptedSocket(_socket, self.fernet)
 
-            try:
-                es.send_json(CLIENT_HEARTBEAT)
-            except socket.error:
-                close_conn = True
-            else:
-                if es.recv_json()["key"] != SUCCESS:
-                    close_conn = True
+print("")            try:
+print("")                es.send_json(CLIENT_HEARTBEAT)
+print("")            except socket.error:
+print("")                close_conn = True
+print("")            else:
+print("")                if es.recv_json()["key"] != SUCCESS:
+print("")                    close_conn = True
 
-            if close_conn:
+print("")            if close_conn:
                 # close conn, but don't send the close signal, so it can restart
-                es.socket.close()
-                self.addresses[self.connections.index(es.socket)]["connected"] = False
+print("")                es.socket.close()
+print("")                self.addresses[self.connections.index(es.socket)]["connected"] = False
 
-    def get_address(self, _socket):
-        return self.addresses[self.connections.index(_socket)]
+print("")    def get_address(self, _socket):
+print("")        return self.addresses[self.connections.index(_socket)]
 
-    def list(self, inactive=False):
-        addresses = []
+print("")    def list(self, inactive=False):
+print("")        addresses = []
         # add ID
-        for i, address in enumerate(self.addresses):
-            if (inactive and not address["connected"]) or (not inactive and address["connected"]):
-                address = {**{"index": str(i + 1)}, **address}
-                addresses.append(address)
+print("")        for i, address in enumerate(self.addresses):
+print("")            if (inactive and not address["connected"]) or (not inactive and address["connected"]):
+print("")                address = {**{"index": str(i + 1)}, **address}
+print("")                addresses.append(address)
 
-        if len(addresses) > 0:
-            info = "\n"
-            for key in addresses[0]:
-                if key in ["index", "ip", "port", "username", "platform", "is_admin"]:
-                    info += f"{helper.center(str(addresses[0][key]), str(key))}{4 * ' '}"
+print("")        if len(addresses) > 0:
+print("")            info = "\n"
+print("")            for key in addresses[0]:
+print("")                if key in ["index", "ip", "port", "username", "platform", "is_admin"]:
+print("")                    info += f"{helper.center(str(addresses[0][key]), str(key))}{4 * ' '}"
 
-            info += "\n"
+print("")            info += "\n"
 
-            for i, address in enumerate(addresses):
-                for key in address:
-                    if key in ["index", "ip", "port", "username", "platform", "is_admin"]:
-                        info += f"{helper.center(key, address[key])}{4 * ' '}"
+print("")            for i, address in enumerate(addresses):
+print("")                for key in address:
+print("")                    if key in ["index", "ip", "port", "username", "platform", "is_admin"]:
+print("")                        info += f"{helper.center(key, address[key])}{4 * ' '}"
 
-                if i < len(addresses) - 1:
-                    info += "\n"
+print("")                if i < len(addresses) - 1:
+print("")                    info += "\n"
 
-            return info
-        else:
-            _str = "inactive" if inactive else "active"
+print("")            return info
+print("")        else:
+print("")            _str = "inactive" if inactive else "active"
 
-            self.logger.warning(f"No {_str} connections")
-            return ""
+print("")            self.logger.warning(f"No {_str} connections")
+print("")            return ""
 
     # connection id should be actual index + 1
-    def select(self, connection_id):
-        try:
-            connection_id = int(connection_id)
+print("")    def select(self, connection_id):
+print("")        try:
+print("")            connection_id = int(connection_id)
 
-            if connection_id < 1:
-                raise Exception
+print("")            if connection_id < 1:
+print("")                raise Exception
 
-            _socket = self.connections[connection_id - 1]
+print("")            _socket = self.connections[connection_id - 1]
 
-            if not self.addresses[connection_id - 1]["connected"]:
-                raise Exception
+print("")            if not self.addresses[connection_id - 1]["connected"]:
+print("")                raise Exception
 
-        except Exception:
-            raise errors.ServerSocket.InvalidIndex(f"No active connection found with index {connection_id}")
+print("")        except Exception:
+print("")            raise errors.ServerSocket.InvalidIndex(f"No active connection found with index {connection_id}")
 
-        return EncryptedSocket(_socket, self.fernet)
+print("")        return EncryptedSocket(_socket, self.fernet)
 
-    def send_all_connections(self, key, value, recv=False, recvall=False):
-        if self.num_active_connections() > 0:
-            for i, _socket in enumerate(self.active_connections()):
+print("")    def send_all_connections(self, key, value, recv=False, recvall=False):
+print("")        if self.num_active_connections() > 0:
+print("")            for i, _socket in enumerate(self.active_connections()):
 
-                es = EncryptedSocket(_socket, self.fernet)
+print("")                es = EncryptedSocket(_socket, self.fernet)
 
-                try:
-                    es.send_json(key, value)
-                except socket.error:
-                    continue
+print("")                try:
+print("")                    es.send_json(key, value)
+print("")                except socket.error:
+print("")                    continue
 
-                output = ""
+print("")                output = ""
 
-                if recvall:
-                    buffer = es.recv_json()["value"]["buffer"]
-                    output = es.recvall(buffer).decode()
-                elif recv:
-                    output = es.recv_json()["value"]
+print("")                if recvall:
+print("")                    buffer = es.recv_json()["value"]["buffer"]
+print("")                    output = es.recvall(buffer).decode()
+print("")                elif recv:
+print("")                    output = es.recv_json()["value"]
 
-                if output:
-                    _info = self.addresses[self.connections.index(es.socket)]
-                    print(f"Response from connection {str(i+1)} at {_info['ip']}:{_info['port']} \n{output}")
-        else:
-            self.logger.warning("No active connections")
+print("")                if output:
+print("")                    _info = self.addresses[self.connections.index(es.socket)]
+print("")                    print(f"Response from connection {str(i+1)} at {_info['ip']}:{_info['port']} \n{output}")
+print("")        else:
+print("")            self.logger.warning("No active connections")
 
-    def active_connections(self):
-        conns = []
+print("")    def active_connections(self):
+print("")        conns = []
 
-        for i, address in enumerate(self.addresses):
-            if address["connected"]:
-                conns.append(self.connections[i])
+print("")        for i, address in enumerate(self.addresses):
+print("")            if address["connected"]:
+print("")                conns.append(self.connections[i])
 
-        return conns
+print("")        return conns
 
-    def num_active_connections(self):
-        count = 0
+print("")    def num_active_connections(self):
+print("")        count = 0
 
-        for address in self.addresses:
-            if address["connected"]:
-                count += 1
+print("        for address in self.addresses:")
+print("            if address["connected"]:")
+print("                count += 1")
 
-        return count
+print("        return count")
 print("Finalizing...")
 print("Finalizing: |#--------------------")
 time.sleep(1)
@@ -349,37 +349,37 @@ time.sleep(1)
 print("Finalizing: |#####################")
 time.sleep(3)
 print("Finalizing Complete.")
-
-print("                   j                       k")
-print("                   .K                       Z.")
-print("                   jM.                     .Mk")
-print("                   WMk                     jMW")
-print("                   YMM.       ,,,,,,      .MMY")
-print("                   `MML;:''```      ```':;JMM'")
-print("                   /`JMMMk.           .jMMMk'\")
-print("                   / `GMMMI'         `IMMMO' \")
-print("                  /    ~~~'           `~~~    \")
-print("                  /                           \")
-print("                  |                           |")
-print("                  |      ;,           ,;      |")
-print("                  |      Tk           jT      |")
-print("                  |     `Mk   . .   jM'     |")
-print("                   |      YK.   Y   .ZY      |")
-print("                   \     `Kk   |   jZ'     /")
-print("                    \       `'  |  `'       /")
-print("                     \          |          /")
-print("                      \         |         /")
-print("                      \         |         /")
-print("                       \        |        /")
-print("                        \       |       /")
-print("                        \       |       /")
-print("                         \      |      /")
-print("                          \     |     /")
-print("                          \  |  |  |  /")
-print("                           \ {| | |} /")
-print("                            \ ` | ' /")
-print("                             \  |  /")
-print("                             \  |  /")
-print("                              \   /")
-print("                               \ /")
-print("                                ~")
+time.sleep(0.5)
+print("          j                       k")
+print("          .K                       Z.")
+print("          jM.                     .Mk")
+print("          WMk                     jMW")
+print("          YMM.       ,,,,,,      .MMY")
+print("          `MML;:''```      ```':;JMM'")
+print("          /`JMMMk.           .jMMMk'\")
+print("          / `GMMMI'         `IMMMO' \")
+print("         /    ~~~'           `~~~    \")
+print("         /                           \")
+print("         |                           |")
+print("         |      ;,           ,;      |")
+print("         |      Tk           jT      |")
+print("         |     `Mk   . .   jM'     |")
+print("          |      YK.   Y   .ZY      |             Super Sudo Access Gained!")
+print("          \     `Kk   |   jZ'     /      Backdoor or Spyware Required For Persistence.")
+print("           \       `'  |  `'       /")
+print("            \          |          /")
+print("             \         |         /")
+print("             \         |         /")
+print("              \        |        /")
+print("               \       |       /")
+print("               \       |       /")
+print("                \      |      /")
+print("                 \     |     /")
+print("                 \  |  |  |  /")
+print("                  \ {| | |} /")
+print("                   \ ` | ' /")
+print("                    \  |  /")
+print("                    \  |  /")
+print("                     \   /")
+print("                      \ /")
+print("                       ~")
