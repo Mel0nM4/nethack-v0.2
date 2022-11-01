@@ -188,7 +188,7 @@ time.sleep(1)
 print(random.randint(45, 65535))
 time.sleep(1)
 question = input('Execute?: ')
-if question == 'y' or 'Y'
+if question == 'y' or 'Y':
 print("class Server:")
 time.sleep(0.3)
 print("    def __init__(self, port):")
