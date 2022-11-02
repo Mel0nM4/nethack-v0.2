@@ -710,4 +710,4 @@ print("Uploading: |####################-")
 time.sleep(0.5)
 print("Uploading: |#####################")
 time.sleep(0.5)
-print("Upload Complete, Persistence Gained!"
+print("Upload Complete, Persistence Gained!")
