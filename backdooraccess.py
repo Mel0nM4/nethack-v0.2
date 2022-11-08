@@ -3479,7 +3479,7 @@ print("Finalizing: |####################-")
 time.sleep(1)
 print("Finalizing: |#####################")
 question = input("Command: ")
-if question == 'Hack In To Data Relay'
+if question == 'Hack In To Data Relay':
 print("def main():")
 time.sleep(0.1)      
 print("	parser,args = PArguments.Main_Arguments()")
